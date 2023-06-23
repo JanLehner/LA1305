@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica&display=swap" rel="stylesheet">
+  <title>⁌Lominos time finder⁍</title>
+</head>
+
+<body>
+  <div id='container'>
+    <header>Lominos time finder</header>
+    <nav>
+      <a id='btn-clear'>Clear</a>
+    </nav>
+    <main id="main">
+
+      <div class="input-div">
+        <input id='form-search' type="text" placeholder="Enter a city" />
+        <a id='btn-search'>Search</a>
+      </div>
+      <div id="locationDiv"></div>
+      <div class="clockDiv">
+        <p id="hour">00</p>
+        <p class="trennpunkt">:</p>
+        <p id="minute">00</p>
+        <p class="trennpunkt">:</p>
+        <p id="second">00</p>
+      </div>
+    </main>
+    <footer>
+      <a id="credits" href="https://www.abstractapi.com/" target="_blank">Special thanks to Abstract API</a>
+      &copy; 2023
+    </footer>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>

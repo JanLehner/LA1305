@@ -1,0 +1,263 @@
+:root {
+  --grey-hover: #ded9d9;
+  --green-theme-3: #222D25;
+  --green-theme-2: #2B5434;
+  --green-theme-1: #6EB385;
+  --green-gradient-toLeft: linear-gradient(to left, var(--green-theme-1), var(--green-theme-2));
+  --green-gradient-toRight: linear-gradient(to right, var(--green-theme-1), var(--green-theme-2));
+}
+
+body {
+  margin: 0;
+  font-family: 'Geologica', sans-serif;
+  color:white;
+  height: 100vh;
+  text-align: center;
+}
+
+#root{
+  height: 100vh;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 100px auto 60px;
+  grid-template-areas:
+      'header'
+      'nav'
+      'main'
+      'footer';
+  height: 100%;
+}
+
+/*Flexbox*/
+header,
+nav,
+footer,
+a,
+.input-div,
+.clockDiv,
+#loadingDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main,
+#blurDiv,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*Button*/
+a{
+  text-decoration: none;
+  color: white;
+}
+
+#btn-clear {
+  color: white;
+  background-image: var(--green-gradient-toLeft);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s;
+  border-radius: 0.5em;
+  cursor: pointer;
+  margin: 20px;
+  height: 50%;
+  width: 40%;
+}
+
+#btn-clear::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.5em;
+  background-image: var(--green-gradient-toRight);
+  z-index: -1;
+  transition: transform 1s, opacity 1s;
+  opacity: 0;
+}
+
+#btn-clear:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#btn-search {
+  margin: 0;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.5em;
+  height: 93%;
+  width: 20%;
+  font-size: auto;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#btn-search:hover {
+  background-color: var(--grey-hover);
+}
+
+/*Header*/
+header {
+  background-color: var(--green-theme-3);
+  font-size: 25px;
+}
+
+/*Nav*/
+nav {
+  background-color: var(--green-theme-3);
+}
+
+/*Main*/
+main {
+  background-image: url(./Images/backgroundImage.jpg);
+  background-size: cover;
+  justify-content: start;
+}
+
+.input-div {
+  margin: 20px;
+  margin-top: 60px;
+  height: 12%;
+  width: 55%;
+}
+
+#form-search {
+  height: 90%;
+  width: 80%;
+  padding-left: 15px;
+  border-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  outline-style: none;
+  font-family: 'Geologica', sans-serif;
+  font-size: 20px;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+#form-search:hover {
+  background-color: var(--grey-hover);
+}
+
+#loadingDiv {
+  flex-direction: column;
+}
+
+#loadingText {
+  margin: 0;
+}
+
+#locationDiv {
+  margin: 20px;
+  font-size: 43px;
+}
+
+.clockDiv {
+  margin: 20px;
+  font-size: 95px;
+  border-radius: 5px;
+}
+
+.trennpunkt,
+#second,
+#minute,
+#hour{
+  margin: 0;
+}
+
+/*Footer*/
+footer {
+  padding: 5px;
+  background-color: var(--green-theme-3);
+}
+
+#footerDiv{
+  height: 100%;
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 515px) {
+  #btn-search {
+      width: 40%;
+      height: 62%;
+  }
+
+  #form-search {
+      font-size: 12px;
+      height: 60%;
+  }
+
+  #locationDiv {
+      font-size: 30px;
+  }
+
+  .clockDiv {
+      font-size: 50px;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/*CSS für den Loader*/
+/*Kopiert von https://loading.io/css/*/
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 40px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #fff;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+  0% {
+      top: 8px;
+      height: 64px;
+  }
+
+  50%,
+  100% {
+      top: 24px;
+      height: 32px;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------*/
